@@ -44,7 +44,7 @@ build: ## Build a beta version
 	go build -race -o ./dist/message-cannon ./main.go
 
 install: ## Install to $GOPATH/src
-	go install ./...
+	go install -ldflags "-X main.version=master -X main.commit=$$(git rev-parse HEAD)" ./...
 
 # Absolutely awesome: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help:

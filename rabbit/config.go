@@ -18,6 +18,10 @@ const (
 
 // Config describes all available options for amqp connection creation.
 type Config struct {
+	Version struct {
+		Version string
+		Commit  string
+	}
 	// Connections describe the connections used by consumers.
 	Connections map[string]Connection `mapstructure:"connections"`
 	// Exchanges have all the exchanges used by consumers.
